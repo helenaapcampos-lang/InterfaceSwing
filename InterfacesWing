@@ -1,0 +1,38 @@
+
+        panel.add(resultado);
+
+        // Adicionando painel à janela
+        frame.add(panel);
+
+        // Tornando visível
+        frame.setVisible(true);
+    }
+}
+import javax.swing.*;
+
+public class ExemploSwing {
+    public static void main(String[] args) {
+        // Criação da janela principal
+        JFrame frame = new JFrame("Minha Interface Swing");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 200);
+
+        // Painel principal
+        JPanel panel = new JPanel();
+
+        // Componentes
+        JLabel label = new JLabel("Digite seu nome:");
+        JTextField textField = new JTextField(15);
+        JButton button = new JButton("Enviar");
+        JLabel resultado = new JLabel("Resultado aparecerá aqui");
+
+        // Ação do botão
+        button.addActionListener(e -> {
+            String nome = textField.getText();
+            resultado.setText("Olá, " + nome + "!");
+        });
+
+        // Adicionando componentes ao painel
+        panel.add(label);
+        panel.add(textField);
+        panel.add(button);
